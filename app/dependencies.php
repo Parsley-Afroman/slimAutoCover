@@ -41,8 +41,9 @@ return function (ContainerBuilder $containerBuilder) {
 
     $container['CarTypeModel'] = DI\factory('\SlimAutoCover\Factories\CaryTypeModelFactory');
     $container['CoverTypeModel'] = DI\factory('SlimAutoCover\Factories\CoverTypeModelFactory');
+    $container['NewQuoteModel'] = DI\factory('SlimAutoCover\Factories\NewQuoteModelFactory');
     $container['HomePageController'] = DI\factory('\SlimAutoCover\Factories\HomePageControllerFactory');
-
+    $container['NewQuoteController'] = DI\factory('\SlimAutoCover\Factories\NewQuoteControllerFactory');
 
 
     $containerBuilder->addDefinitions($container);
