@@ -6,7 +6,8 @@ class CarTypeModel
 {
     private $db;
 
-    public function __construct(\PDO $db) {
+    public function __construct(\PDO $db)
+    {
         $this->db = $db;
     }
 
@@ -17,9 +18,10 @@ class CarTypeModel
         return $query->fetchAll();
     }
 
-    public function getCarMultiplier()
+    public function getCarMultiplier($id)
     {
-        $query = $this->db->prepare("SELECT `id`, `type_multiplier` FROM `car_type`");
+        $query = $this->db->prepare("SELECT `type_multiplier` FROM `car_type` WHERE `id` = :id");
+        $query->bindParam(':id', $id);
         $query->execute();
         return $query->fetchAll();
 

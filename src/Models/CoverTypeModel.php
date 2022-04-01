@@ -18,9 +18,10 @@ class CoverTypeModel
         return $query->fetchAll();
     }
 
-    public function getCoverMultiplier()
+    public function getCoverMultiplier($id)
     {
-        $query = $this->db->prepare("SELECT `id`, `cover_multiplier` FROM `cover_type`");
+        $query = $this->db->prepare("SELECT `cover_multiplier` FROM `cover_type` WHERE `id` = :id");
+        $query->bindParam(':id', $id);
         $query->execute();
         return $query->fetchAll();
     }
