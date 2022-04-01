@@ -33,5 +33,17 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['DB'] = function () {
+        $db = new PDO('mysql:host=127.0.0.1; dbname=car_insurance', 'root', 'password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
+    };
+
+    $container['CarTypeModel'] = DI\factory('\SlimAutoCover\Factories\CaryTypeModelFactory');
+    $container['CoverTypeModel'] = DI\factory('SlimAutoCover\Factories\CoverTypeModelFactory');
+    $container['HomePageController'] = DI\factory('\SlimAutoCover\Factories\HomePageControllerFactory');
+
+
+
     $containerBuilder->addDefinitions($container);
 };
