@@ -21,7 +21,7 @@ class FormViewHelper
             $coverTypeOutput .= '</option>';
         }
 
-
+//see '/newQuote' as where a route needs to be made from
         $result = ' <form method="post" action="/newQuote">
                     <label>Car Type:</label>
                     <select name="carType">' . $carTypeOutput . ' </select>'
