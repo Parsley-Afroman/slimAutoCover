@@ -24,10 +24,7 @@ class HomePageController
     public function __invoke(Request $request, Response $response, array $args)
     {
         $args['carType'] = $this->carTypeModel->getCarType();
-//        $args['carMultipler'] = $this->carTypeModel->getCarMultiplier();
         $args['coverType'] = $this->coverTypeModel->getCoverType();
-//        $args['coverMultipler'] = $this->coverTypeModel->getCoverMultiplier();
-
         return $this->renderer->render($response, 'index.phtml', $args);
     }
 }

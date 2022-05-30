@@ -41,8 +41,12 @@ return function (ContainerBuilder $containerBuilder) {
 
     $container['CarTypeModel'] = DI\factory('\SlimAutoCover\Factories\CaryTypeModelFactory');
     $container['CoverTypeModel'] = DI\factory('SlimAutoCover\Factories\CoverTypeModelFactory');
+    $container['QuotesModel'] = DI\factory('SlimAutoCover\Factories\QuotesModelFactory');
+    $container['DeleteModel'] = DI\factory('SlimAutoCover\Factories\DeleteModelFactory');
     $container['HomePageController'] = DI\factory('\SlimAutoCover\Factories\HomePageControllerFactory');
-
+    $container['NewQuotePageController'] = DI\factory('\SlimAutoCover\Factories\NewQuotePageControllerFactory');
+    $container['QuotesPageController'] = DI\factory('\SlimAutoCover\Factories\QuotesPageControllerFactory');
+    $container['DeletePageController'] = DI\factory('\SlimAutoCover\Factories\DeletePageControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };
