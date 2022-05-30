@@ -27,6 +27,7 @@ class DeletePageController
         $this->DeleteModel->DeleteClient($id);
         $args['quotes'] = $this->QuotesModel->getClientQuotes($name);
         $args['name'] = $name;
+        // This isn't working -> likely needs to be routed to delete.phtml (but change to delete.php, and implement a controller that can redirect the page to quotes (reuse already existing functionality?))
         return $this->renderer->render($response,'quotes.phtml', $args);
     }
 }
