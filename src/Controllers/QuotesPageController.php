@@ -4,7 +4,6 @@ use SlimAutoCover\Models\QuotesModel;
 use Slim\Views\PhpRenderer;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-session_start();
 
 class QuotesPageController
 {
@@ -30,8 +29,6 @@ class QuotesPageController
         };
         $args['quotes'] = $this->QuotesModel->getClientQuotes($name);
         $args['name'] = $name;
-        $_SESSION['quotes'] = $this->QuotesModel->getClientQuotes($name);
-        $_SESSION['name'] = $name;
         return $this->renderer->render($response,'quotes.phtml', $args);
     }
 }
